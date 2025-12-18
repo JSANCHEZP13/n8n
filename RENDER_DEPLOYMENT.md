@@ -51,13 +51,31 @@ N8N_OWNER_PASSWORD=tu-contraseña-segura
 3. **Database**: Se creará automáticamente una base PostgreSQL
 4. **SSL**: Render proporciona HTTPS automáticamente
 
-## � Costios de Render
+## 💰 Costos de Render
 
+### Opción Recomendada (Producción):
 - **Web Service**: $7/mes (Starter Plan)
-- **PostgreSQL Database**: GRATIS (Free Plan) - **PERSISTENTE**
+- **PostgreSQL Database**: $7/mes (Standard Plan)
+- **Total**: $14/mes
+
+**Incluye:**
+- ✅ Base de datos siempre activa (no hiberna)
+- ✅ Backups automáticos diarios
+- ✅ 10GB de almacenamiento
+- ✅ Garantía de persistencia de datos
+
+### Opción Económica (Pruebas/Desarrollo):
+- **Web Service**: $7/mes (Starter Plan)
+- **PostgreSQL Database**: GRATIS (Free Plan)
 - **Total**: $7/mes
 
-¡Excelente! La base de datos PostgreSQL es gratuita, solo pagas por el servicio web.
+**⚠️ Limitaciones del plan gratuito:**
+- ❌ Puede hibernar después de 90 días de inactividad
+- ❌ Solo 1GB de almacenamiento
+- ❌ Sin backups automáticos
+- ❌ Posible pérdida de datos si no se usa regularmente
+
+**Recomendación:** Usa el plan Standard ($14/mes) si vas a usar n8n en producción con workflows importantes.
 
 ## 🔧 Configuración Post-Despliegue
 
@@ -142,7 +160,7 @@ Si habilitaste la gestión de usuarios, crea el primer usuario admin:
 - Considera habilitar autenticación de dos factores
 
 ### Backup
-- Render hace backup automático de la base de datos
+- Render hace backup automático de la base de datos (solo en planes de pago)
 - Considera exportar workflows importantes regularmente
 
 ## 📞 Soporte
