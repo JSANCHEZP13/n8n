@@ -4,10 +4,6 @@ services:
     runtime: node
     plan: starter
     region: oregon
-    disk:
-      name: n8n-data
-      mountPath: /data
-      sizeGB: 1
     buildCommand: |
       echo "🔧 Installing dependencies..."
       pnpm install --frozen-lockfile
@@ -23,13 +19,27 @@ services:
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
       - key: DB_TYPE
-        value: sqlite
-      - key: DB_SQLITE_DATABASE
-        value: /data/database.sqlite
-      - key: DB_SQLITE_POOL_SIZE
-        value: 3
-      - key: DB_SQLITE_ENABLE_WAL
-        value: true
+        value: postgresdb
+      - key: DB_POSTGRESDB_HOST
+        fromDatabase:
+          name: n8n-postgres
+          property: host
+      - key: DB_POSTGRESDB_PORT
+        fromDatabase:
+          name: n8n-postgres
+          property: port
+      - key: DB_POSTGRESDB_DATABASE
+        fromDatabase:
+          name: n8n-postgres
+          property: database
+      - key: DB_POSTGRESDB_USER
+        fromDatabase:
+          name: n8n-postgres
+          property: user
+      - key: DB_POSTGRESDB_PASSWORD
+        fromDatabase:
+          name: n8n-postgres
+          property: password
       - key: EXECUTIONS_PROCESS
         value: main
       - key: EXECUTIONS_MODE
@@ -40,3 +50,10 @@ services:
         value: info
     healthCheckPath: /healthz
     autoDeploy: true
+
+databases:
+  - name: n8n-postgres
+    databaseName: n8n
+    user: n8n
+    plan: starter
+    region: oregon
