@@ -55,8 +55,8 @@ N8N_OWNER_PASSWORD=tu-contraseña-segura
 
 ### Opción Recomendada (Producción):
 - **Web Service**: $7/mes (Starter Plan)
-- **PostgreSQL Database**: $7/mes (Starter Plan)
-- **Total**: $14/mes
+- **PostgreSQL Database**: $6/mes (Basic-256mb Plan)
+- **Total**: $13/mes
 
 **Incluye:**
 - ✅ Base de datos siempre activa (no hiberna)
@@ -77,7 +77,7 @@ N8N_OWNER_PASSWORD=tu-contraseña-segura
 - ❌ Sin backups automáticos
 - ❌ Posible pérdida de datos si no se usa regularmente
 
-**Recomendación:** Usa el plan Starter ($14/mes) si vas a usar n8n en producción con workflows importantes.
+**Recomendación:** Usa el plan Basic-256mb ($13/mes) si vas a usar n8n en producción con workflows importantes.
 
 ## 🔧 Configuración Post-Despliegue
 

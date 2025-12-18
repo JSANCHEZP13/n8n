@@ -55,5 +55,5 @@ databases:
   - name: n8n-postgres
     databaseName: n8n
     user: n8n
-    plan: starter
+    plan: basic-256mb
     region: oregon
