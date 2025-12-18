@@ -51,6 +51,14 @@ N8N_OWNER_PASSWORD=tu-contraseña-segura
 3. **Database**: Se creará automáticamente una base PostgreSQL
 4. **SSL**: Render proporciona HTTPS automáticamente
 
+## � Costios de Render
+
+- **Web Service**: $7/mes (Starter Plan)
+- **PostgreSQL Database**: GRATIS (Free Plan) - **PERSISTENTE**
+- **Total**: $7/mes
+
+¡Excelente! La base de datos PostgreSQL es gratuita, solo pagas por el servicio web.
+
 ## 🔧 Configuración Post-Despliegue
 
 ### Acceder a tu instancia
