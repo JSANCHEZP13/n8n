@@ -4,6 +4,7 @@ services:
     runtime: node
     plan: starter
     region: oregon
+    nodeVersion: "22.12.0"
     buildCommand: |
       echo "🔧 Installing dependencies..."
       pnpm install --frozen-lockfile
