@@ -13,6 +13,8 @@ services:
       echo "✅ Build completed successfully"
     startCommand: node start-render.js
     envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
       - key: NODE_ENV
         value: production
       - key: N8N_PROTOCOL
