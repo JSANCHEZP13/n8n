@@ -8,13 +8,10 @@ services:
     buildCommand: |
       echo "🔧 Installing dependencies..."
       pnpm install --frozen-lockfile
-      echo "🏗️ Building n8n for production..."
-      pnpm build:deploy > build.log 2>&1
+      echo "🏗️ Building n8n..."
+      pnpm build
       echo "✅ Build completed successfully"
-      echo "📁 Checking compiled directory..."
-      ls -la compiled/ || echo "compiled/ not found"
-      ls -la compiled/bin/ || echo "compiled/bin/ not found"
-    startCommand: node compiled/bin/n8n start
+    startCommand: node packages/cli/bin/n8n start
     envVars:
       - key: NODE_VERSION
         value: 22.12.0
