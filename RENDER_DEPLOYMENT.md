@@ -20,10 +20,11 @@ Esta guía te ayudará a desplegar tu fork de n8n en Render.
 ### 2. Configuración Automática
 
 El archivo `render.yaml` configurará automáticamente:
-- ✅ Servicio web con Node.js
-- ✅ Base de datos PostgreSQL
+- ✅ Servicio web con Node.js (Frontend + Backend)
+- ✅ Base de datos SQLite con disco persistente
 - ✅ Variables de entorno necesarias
 - ✅ Comandos de build y start optimizados
+- ✅ 1GB de almacenamiento persistente
 
 ### 3. Variables de Entorno Adicionales (Opcional)
 
