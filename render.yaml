@@ -11,12 +11,14 @@ services:
       echo "🏗️ Building n8n for production..."
       pnpm build:deploy > build.log 2>&1
       echo "✅ Build completed successfully"
-    startCommand: node start-render.js
+    startCommand: node compiled/bin/n8n start
     envVars:
       - key: NODE_VERSION
         value: 22.12.0
       - key: NODE_ENV
         value: production
+      - key: N8N_PORT
+        value: 10000
       - key: N8N_PROTOCOL
         value: https
       - key: N8N_ENCRYPTION_KEY
