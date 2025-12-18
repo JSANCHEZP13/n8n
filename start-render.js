@@ -3,6 +3,8 @@
 /**
  * Startup script optimized for Render deployment
  * This script ensures proper environment setup and starts n8n
+ * 
+ * Note: pnpm build:deploy generates files in 'compiled/' directory
  */
 
 const { spawn } = require('child_process');
@@ -23,11 +25,13 @@ console.log(`📍 Host: ${process.env.N8N_HOST || 'localhost'}`);
 console.log(`🔌 Port: ${process.env.N8N_PORT}`);
 console.log(`🌐 Protocol: ${process.env.N8N_PROTOCOL || 'https'}`);
 
-// Start n8n
-const n8nPath = path.join(__dirname, 'packages', 'cli', 'bin', 'n8n');
+// Start n8n from the compiled directory
+// pnpm build:deploy creates the production build in 'compiled/'
+const n8nPath = path.join(__dirname, 'compiled', 'bin', 'n8n');
 const n8nProcess = spawn('node', [n8nPath, 'start'], {
   stdio: 'inherit',
-  env: process.env
+  env: process.env,
+  cwd: path.join(__dirname, 'compiled')
 });
 
 n8nProcess.on('error', (error) => {
